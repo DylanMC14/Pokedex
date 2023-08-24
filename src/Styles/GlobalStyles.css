@@ -1,0 +1,64 @@
+.navBox{
+    display: flex;
+    background-color: aqua;
+    justify-content: space-around;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    background-image: url(https://media4.giphy.com/media/LLhpt7dnUaLOTurBRz/200w.webp?cid=ecf05e47kvphoqp89hpctctgnds9sxxizhmi3rb2bz9aud5f&ep=v1_gifs_search&rid=200w.webp&ct=g);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    width: 100px;
+    height: 50px;
+    
+}
+
+.pokedex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://media3.giphy.com/media/xoumb07zRcBS8/100.webp?cid=ecf05e47zf71xabay6rgb178zji6snv7bu616kcp5mao1mt7&ep=v1_gifs_related&rid=100.webp&ct=g);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    width: 100px;
+    height: 50px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://media1.giphy.com/media/ePVaotrqY3uwtXvYF7/200w.webp?cid=ecf05e47n7ulrbir6uci3e7aqfpu9peaaycdulnfeotcehot&ep=v1_gifs_search&rid=200w.webp&ct=g);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    width: 100px;
+    height: 50px;
+}
+
+.pokeBox{
+    display: flex;
+    justify-content: space-around;
+}
+
+#infoBox{
+    display: flex;
+    flex-direction: column;
+    background-image:  url(https://media2.giphy.com/media/l0HlvGZXSgzNtY7OU/200w.webp?cid=ecf05e47tyqz8x71w3netjf6cxliflh6ebik4cu9ne0e5e56&ep=v1_gifs_search&rid=200w.webp&ct=g);
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+
+#poke1{
+    display: flex;
+    flex-direction: column;
+    background-image:  url(https://media2.giphy.com/media/l0HlvGZXSgzNtY7OU/200w.webp?cid=ecf05e47tyqz8x71w3netjf6cxliflh6ebik4cu9ne0e5e56&ep=v1_gifs_search&rid=200w.webp&ct=g);
+    background-repeat: no-repeat;
+    background-size: contain;
+}

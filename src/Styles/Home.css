@@ -1,3 +1,15 @@
 .boxHome{
     background-color: green;
+    background-image: url(https://www.bizak.es/wp-content/uploads/2018/09/BANNER-26-POKEMON-1920X700-1170x427.jpg);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    /* width: 150%; */
+}
+
+.prueba{
+    background-color: blue;
+}
+
+#title-home{
+    margin-top: 0;
 }

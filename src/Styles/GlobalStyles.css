@@ -44,7 +44,8 @@
 
 .pokeBox{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #infoBox{
@@ -61,4 +62,5 @@
     background-image:  url(https://media2.giphy.com/media/l0HlvGZXSgzNtY7OU/200w.webp?cid=ecf05e47tyqz8x71w3netjf6cxliflh6ebik4cu9ne0e5e56&ep=v1_gifs_search&rid=200w.webp&ct=g);
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 50%;
 }

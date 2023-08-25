@@ -7,18 +7,16 @@ function Home() {
     return ( 
         <div className='boxHome'>
           <div>
-            <h1>Home</h1>
+            {/* <h1 id='title-home'>Home</h1> */}
             {/* <PokeInfo/> */}
             <Header/>
-            {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon"/> */}
+            {/* <img src="https://www.bizak.es/wp-content/uploads/2018/09/BANNER-26-POKEMON-1920X700-1170x427.jpg" alt="Banner Pokemon" height={200} width={200}/> */}
           </div>
 
-          <div>
-            <body>
+
+          <div className='prueba'>          
               <h1>Hola prueba</h1>
-            </body>
           </div>
-
         </div>
      );
 }

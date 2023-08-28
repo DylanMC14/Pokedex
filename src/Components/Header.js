@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import "../Styles/GlobalStyles.css";
+import defaultImage from '../Assets/Img/gif3.gif';
 
 
 function Header() {
@@ -29,14 +30,24 @@ function Header() {
 
         };
     fetchRandomPokemon();
-    }, [])
+    }, []);
+    const handleImageLoad = (event) => {
+      event.target.src = event.target.dataset.src;
+    };
+
     return (
         <header>
       {/* <h1>Random Pokémon Header</h1> */}
       <div className="pokeBox">
         {randomPokemons.map((pokemon) => (
           <div id='poke1' key={pokemon.id}>
-            <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
+            <img src={defaultImage}
+             alt={pokemon.name}
+            data-src={pokemon.sprites.front_default} // Almacenar la URL real en un atributo personalizado
+            onLoad={handleImageLoad} // Manejador de carga de imagen
+            loading="lazy" // Agregar atributo "loading" con valor "lazy"
+            style={{maxHeight:'100px', maxWidth: "100px", borderRadius:"5px",}}
+            />
 
             <div id='infoBox'>
             {/* <p>{pokemon.name}</p> */}

@@ -14,8 +14,7 @@ function Home() {
           </div>
 
 
-          <div className='prueba'>          
-              <h1>Hola prueba</h1>
+          <div className='prueba'>
           </div>
         </div>
      );

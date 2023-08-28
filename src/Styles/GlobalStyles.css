@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "pokeletra";
+    src: url("../.././public/Pokemon\ Solid.ttf");
+}
+
 .navBox{
     display: flex;
-    background-color: aqua;
     justify-content: space-around;
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "pokeletra";
+    letter-spacing: 2px;
 }
 
 .home{
@@ -12,10 +21,10 @@
     background-image: url(https://media4.giphy.com/media/LLhpt7dnUaLOTurBRz/200w.webp?cid=ecf05e47kvphoqp89hpctctgnds9sxxizhmi3rb2bz9aud5f&ep=v1_gifs_search&rid=200w.webp&ct=g);
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 5px;
     color: aliceblue;
     width: 100px;
     height: 50px;
-    
 }
 
 .pokedex{
@@ -25,9 +34,30 @@
     background-image: url(https://media3.giphy.com/media/xoumb07zRcBS8/100.webp?cid=ecf05e47zf71xabay6rgb178zji6snv7bu616kcp5mao1mt7&ep=v1_gifs_related&rid=100.webp&ct=g);
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 5px;
     color: aliceblue;
     width: 100px;
     height: 50px;
+}
+
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+a:visited {
+    color: orangered;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+    text-decoration: underline;
 }
 
 .about {
@@ -37,6 +67,7 @@
     background-image: url(https://media1.giphy.com/media/ePVaotrqY3uwtXvYF7/200w.webp?cid=ecf05e47n7ulrbir6uci3e7aqfpu9peaaycdulnfeotcehot&ep=v1_gifs_search&rid=200w.webp&ct=g);
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 5px;
     color: aliceblue;
     width: 100px;
     height: 50px;
@@ -45,7 +76,8 @@
 .pokeBox{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    position: relative;
+    top: 70px;
 }
 
 #infoBox{
@@ -62,5 +94,29 @@
     background-image:  url(https://media2.giphy.com/media/l0HlvGZXSgzNtY7OU/200w.webp?cid=ecf05e47tyqz8x71w3netjf6cxliflh6ebik4cu9ne0e5e56&ep=v1_gifs_search&rid=200w.webp&ct=g);
     background-repeat: no-repeat;
     background-size: contain;
-    border-radius: 50%;
+    border-radius: 25%;
+    position: relative;
+    transition: all .3s ease;
+}
+
+#poke1:hover{
+    transform: 
+    perspective(250px)
+    rotateX(10deg)
+    translateY(-5%)
+    translateZ(0);
+}
+
+#poke1::before{
+    content: "";
+    position: absolute;
+    background-image: 
+    linear-gradient(
+        to bottom,
+        transparent 10%,
+        rgba(252, 250, 250, 0.5) 50%,
+        rgb(249, 247, 247) 95%
+    );
+    opacity: 0;
+    transition: all .3s ease;
 }

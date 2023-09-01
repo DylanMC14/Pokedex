@@ -1,7 +1,28 @@
 .boxAbout{
     background-color: yellow;
 }
+
 @font-face {
     font-family: "pokeletra";
     src: url("../.././public/Pokemon\ Solid.ttf");
+}
+
+.title{
+    font-family: "pokeletra";
+    letter-spacing: 4px;
+}
+
+.poke-Info{
+    font-family: "pokeletra";
+    letter-spacing: 3px
+}
+
+.seconds-Titles{
+    font-family: "pokeletra";
+    letter-spacing: 4px;
+}
+
+.paragraphs{
+    font-family: "pokeletra";
+    letter-spacing: 2px;
 }

@@ -1,0 +1,7 @@
+.boxPokedex{
+    background-color: red;
+}
+@font-face {
+    font-family: "pokeletra";
+    src: url("../.././public/Pokemon\ Solid.ttf");
+}

@@ -12,14 +12,16 @@
     background-size: cover;
     font-family: "pokeletra";
     letter-spacing: 2px;
+    padding-top: 10px;
+    padding-bottom: 15px;
 }
 
 .home{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: brown;
-    background-image: url(https://media4.giphy.com/media/LLhpt7dnUaLOTurBRz/200w.webp?cid=ecf05e47kvphoqp89hpctctgnds9sxxizhmi3rb2bz9aud5f&ep=v1_gifs_search&rid=200w.webp&ct=g);
+    /* background-color: brown; */
+    /* background-image: url(https://media4.giphy.com/media/LLhpt7dnUaLOTurBRz/200w.webp?cid=ecf05e47kvphoqp89hpctctgnds9sxxizhmi3rb2bz9aud5f&ep=v1_gifs_search&rid=200w.webp&ct=g); */
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
@@ -32,9 +34,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(https://media3.giphy.com/media/xoumb07zRcBS8/100.webp?cid=ecf05e47zf71xabay6rgb178zji6snv7bu616kcp5mao1mt7&ep=v1_gifs_related&rid=100.webp&ct=g);
+    /* background-image: url(https://media3.giphy.com/media/xoumb07zRcBS8/100.webp?cid=ecf05e47zf71xabay6rgb178zji6snv7bu616kcp5mao1mt7&ep=v1_gifs_related&rid=100.webp&ct=g);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     border-radius: 5px;
     color: aliceblue;
     width: 100px;
@@ -47,12 +49,12 @@ a:link {
 }
 
 a:visited {
-    color: violet;
+    color: aliceblue;
     text-decoration: none;
 }
 
 a:hover{
-    color: black;
+    color: violet;
     text-decoration: underline;
 }
 
@@ -65,9 +67,9 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(https://media1.giphy.com/media/ePVaotrqY3uwtXvYF7/200w.webp?cid=ecf05e47n7ulrbir6uci3e7aqfpu9peaaycdulnfeotcehot&ep=v1_gifs_search&rid=200w.webp&ct=g);
+    /* background-image: url(https://media1.giphy.com/media/ePVaotrqY3uwtXvYF7/200w.webp?cid=ecf05e47n7ulrbir6uci3e7aqfpu9peaaycdulnfeotcehot&ep=v1_gifs_search&rid=200w.webp&ct=g);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     border-radius: 5px;
     color: aliceblue;
     width: 100px;

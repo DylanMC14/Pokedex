@@ -1,5 +1,12 @@
 .boxAbout{
-    background-color: yellow;
+    /* margin-top: 25px; */
+    padding-bottom: 10px;
+}
+
+.text{
+    background-image: url(../Assets/Img/pokedex-pantalla-corto2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @font-face {

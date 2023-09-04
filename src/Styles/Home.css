@@ -9,7 +9,7 @@
 }
 
 .box-games{
-    background-color: blue;
+    /* background-color: blue; */
     margin-top: 0;
 }
 
@@ -17,13 +17,20 @@
     display: flex;
     justify-content: center;
     margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 20px;
     font-family: "pokeletra";
     letter-spacing: 4px;
+    background-image: url(https://i.pinimg.com/originals/e3/25/04/e32504fec92b6b54dfd9b971f07e97c2.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
 }
 
+
 .images-Games{
-    background-image: url("../Assets/Img/pokemon-esmeralda-delta-.jpg");
-    background-size: cover;
+    /* background-image: url("../Assets/Img/pokemon-esmeralda-delta-.jpg");
+    background-size: cover; */
     background-color: brown;
     background-repeat: no-repeat;
     padding-bottom: 1050px;

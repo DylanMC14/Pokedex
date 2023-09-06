@@ -81,6 +81,9 @@ a:active {
     justify-content: space-between;
     position: relative;
     top: 70px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
 }
 
 #infoBox{
@@ -100,6 +103,7 @@ a:active {
     border-radius: 25%;
     position: relative;
     transition: all .3s ease;
+    width: 200px;
 }
 
 #poke1:hover{
@@ -122,4 +126,18 @@ a:active {
     );
     opacity: 0;
     transition: all .3s ease;
+}
+
+.button-Box{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15%;
+}
+
+.button-Next{
+    border-radius: 5px;
+}
+
+.button-Previous{
+    border-radius: 5px;
 }

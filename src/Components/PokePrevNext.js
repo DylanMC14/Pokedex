@@ -13,7 +13,7 @@ export async function getPokemonList (url) {
             for (const pokemon of data.results){
                 const url = pokemon.url;
                 const detailPokemon = await getPokemonDetailByUrl(url);
-                //push al arrelo de pokemons
+                //push al arreglo de pokemons
                 pokemonData.push(detailPokemon);
             }
         }
@@ -35,15 +35,25 @@ export async function getPokemonList (url) {
         const response = await fetch(url);
         const data = await response.json();
         const id = data.id;
+        console.log("AQUI", data.types.length)
+        // pokeType =data.types.map(nombres =>nombres.type.name);
+
+        // console.log(pokeType);
+        // pokeTypeTotal = "The pokemon is of type: " + pokeType;
+        // const totalTypes = data.types["0"]["type"]["name"] + data.types["1"]["type"]["name"]
         return {
-            id,
+            id:data.id,
             name:data.name,
-            image:data.sprites.front_default,
+            image:data.sprites.other["official-artwork"]["front_default"],
             weight:data.weight,
             height:data.height,
-            types:data.types,
-            stats:data.stats["stats"]
-
+            types:data.types.map(nombres =>nombres.type.name + " "),
+            hp:data.stats["0"]["base_stat"],
+            attack:data.stats["1"]["base_stat"],
+            defense:data.stats["2"]["base_stat"],
+            specialattack:data.stats["3"]["base_stat"],
+            specialdefense:data.stats["4"]["base_stat"],
+            speed:data.stats["5"]["base_stat"]
             
         }
     } catch (error) {

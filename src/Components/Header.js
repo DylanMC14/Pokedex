@@ -43,7 +43,7 @@ function Header() {
           <div id='poke1' key={pokemon.id}>
             <img src={defaultImage}
              alt={pokemon.name}
-            data-src={pokemon.sprites.front_default} // Almacenar la URL real en un atributo personalizado
+            data-src={pokemon.sprites.other["dream_world"]["front_default"]} // Almacenar la URL real en un atributo personalizado
             onLoad={handleImageLoad} // Manejador de carga de imagen
             loading="lazy" // Agregar atributo "loading" con valor "lazy"
             style={{maxHeight:'100px', maxWidth: "100px", borderRadius:"5px",}}

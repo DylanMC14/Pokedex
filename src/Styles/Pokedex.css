@@ -1,5 +1,22 @@
 .boxPokedex{
     background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
+}
+
+.pokedex-title{
+    display: flex;
+    justify-content: center;
+}
+
+.pokedex-Search{
+    display: flex;
+    border-radius: 5px;
+}
+
+.button-Search{
+    border-radius: 5px;
 }
 
 @font-face {
@@ -7,8 +24,21 @@
     src: url("../.././public/Pokemon\ Solid.ttf");
 }
 
+.poke-Card{
+    display: flex;
+    justify-content: center;
+}
+
 .poke-Card-info{
     background-color: aqua;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-radius: 25%;
+}
+
+.favorite-button{
+    display: flex;
+    border-radius: 5px;
+    width: 70px;
 }

@@ -4,12 +4,14 @@ import {getPokemonList} from "./PokePrevNext";
 import defaultImage from '../Assets/Img/gif3.gif';
 import PokeButtonNext from './PokeButtonNext';
 import PokeSearch from './PokeSearch';
+import axios from "axios";
 
 
   function Pokedex(){
 
     // randomPokemons almacenar los Pokemon
     const [isList, setIsList] = useState ([]);
+    const [filteredPokemon, setFilteredPokemon] = useState ([]);
     useEffect ( () =>{
         const fetchPokemon = async () => {
             try {
@@ -17,7 +19,7 @@ import PokeSearch from './PokeSearch';
               var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=24');
               var data = response.array;
               setIsList(data);
-              console.log(data);
+              // console.log(data);
               
               
               
@@ -31,8 +33,11 @@ import PokeSearch from './PokeSearch';
         const handleImageLoad = (event) => {
           event.target.src = event.target.dataset.src;
         };
-        
 
+        const handleFilteredPokemon = (filteredData) => {
+          console.log(filteredData);
+          setFilteredPokemon(filteredData);
+          }
 
     return ( 
         <div className='boxPokedex'>
@@ -40,11 +45,11 @@ import PokeSearch from './PokeSearch';
             <h1>Pokedex</h1>
           </div>
           <div className='pokedex-Search'>
-            {/* <input type='search' placeholder='Search'/> */}
-            <PokeSearch/>
+          <PokeSearch handleFilteredPokemon={handleFilteredPokemon}/>
           </div>
         <div className="pokeBox" >
-        {isList.map((pokemon) => (
+        {(filteredPokemon.length > 0 ? filteredPokemon : isList).map(
+            (pokemon) => (
           <div id='poke1' key={pokemon.id}>
             <div className='poke-Card'>
             <img 
@@ -69,8 +74,8 @@ import PokeSearch from './PokeSearch';
               <p>
                 Types: {pokemon.types}
               </p>
-              <p>
-                {/* Stats
+              {/* <p>
+                Stats
               </p>
               <p>
                 Hp: {pokemon.hp}
@@ -88,8 +93,8 @@ import PokeSearch from './PokeSearch';
               Special defense: {pokemon.specialdefense}
               </p>
               <p>
-              Speed: {pokemon.speed} */}
-              </p>
+              Speed: {pokemon.speed}
+              </p> */}
               <button className='favorite-button'>Favorite</button>
             </div>
           </div>

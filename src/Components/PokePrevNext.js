@@ -35,7 +35,7 @@ export async function getPokemonList (url) {
         const response = await fetch(url);
         const data = await response.json();
         const id = data.id;
-        console.log("AQUI", data.types.length)
+        // console.log("AQUI", data.types.length)
         // pokeType =data.types.map(nombres =>nombres.type.name);
 
         // console.log(pokeType);

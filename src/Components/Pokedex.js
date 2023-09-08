@@ -4,25 +4,28 @@ import {getPokemonList} from "./PokePrevNext";
 import defaultImage from '../Assets/Img/gif3.gif';
 import PokeButtonNext from './PokeButtonNext';
 import PokeSearch from './PokeSearch';
-import axios from "axios";
 
 
   function Pokedex(){
 
+    
     // randomPokemons almacenar los Pokemon
     const [isList, setIsList] = useState ([]);
     const [filteredPokemon, setFilteredPokemon] = useState ([]);
+    const totalPokemon= isList.length;
+    // Paginacion
+    const [page, setPage] = useState(30);
+    const [currentPage, setCurrentPage] = useState(1);
+    const laststPosition = currentPage * page;
+    const firstPosition = laststPosition - page;
     useEffect ( () =>{
         const fetchPokemon = async () => {
             try {
               
-              var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=24');
+              var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=1000');
               var data = response.array;
               setIsList(data);
-              // console.log(data);
-              
-              
-              
+
             } catch (error) {
               console.error("Error capturando Pokemon data", error);
             }
@@ -37,6 +40,7 @@ import axios from "axios";
         const handleFilteredPokemon = (filteredData) => {
           console.log(filteredData);
           setFilteredPokemon(filteredData);
+          
           }
 
     return ( 
@@ -98,10 +102,15 @@ import axios from "axios";
               <button className='favorite-button'>Favorite</button>
             </div>
           </div>
-        ))}
+        )).slice(firstPosition, laststPosition)}
       </div>
       <div className='button-Box'>
-        <PokeButtonNext/>
+        <PokeButtonNext 
+        page={page} 
+        currentPage={currentPage} 
+        setCurrentPage={setCurrentPage}
+        totalPokemon={totalPokemon}
+        />
       </div>
       </div>
      );

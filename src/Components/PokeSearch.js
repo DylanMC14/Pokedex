@@ -10,7 +10,7 @@ function PokeSearch({handleFilteredPokemon}) {
 
   const requestsGet = async () => {
     try {
-    var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=24');
+    var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=1000');
     var data = response.array;
       setPokemon(data);
       setTablaPokemon(data);
@@ -20,11 +20,12 @@ function PokeSearch({handleFilteredPokemon}) {
   };
 
   const handleChange = (e) => {
+    filteredOut(e.target.value);
     setSearch(e.target.value);
   };
 
   const handleButtonChange = (e) => {
-    filteredOut(e.target.value);
+    // filteredOut(e.target.value);
   };
 
   const filteredOut = (finalSearch) => {
@@ -32,6 +33,7 @@ function PokeSearch({handleFilteredPokemon}) {
       elemento.name.toLowerCase().includes(finalSearch.toLowerCase().trim())
     );
     setPokemon(result);
+    console.log("aquiii",result);
     handleFilteredPokemon(result);
   };
 

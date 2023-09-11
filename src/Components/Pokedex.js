@@ -4,6 +4,7 @@ import {getPokemonList} from "./PokePrevNext";
 import defaultImage from '../Assets/Img/gif3.gif';
 import PokeButtonNext from './PokeButtonNext';
 import PokeSearch from './PokeSearch';
+import FavoritePokemon from './FavoritePokemon';
 
 
   function Pokedex(){
@@ -14,7 +15,7 @@ import PokeSearch from './PokeSearch';
     const [filteredPokemon, setFilteredPokemon] = useState ([]);
     const totalPokemon= isList.length;
     // Paginacion
-    const [page, setPage] = useState(30);
+    const [page, setPage] = useState(24);
     const [currentPage, setCurrentPage] = useState(1);
     const laststPosition = currentPage * page;
     const firstPosition = laststPosition - page;
@@ -99,7 +100,7 @@ import PokeSearch from './PokeSearch';
               <p>
               Speed: {pokemon.speed}
               </p> */}
-              <button className='favorite-button'>Favorite</button>
+              <button className='favorite-button'><FavoritePokemon/></button>
             </div>
           </div>
         )).slice(firstPosition, laststPosition)}

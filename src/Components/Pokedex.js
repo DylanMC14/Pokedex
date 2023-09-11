@@ -23,7 +23,7 @@ import FavoritePokemon from './FavoritePokemon';
         const fetchPokemon = async () => {
             try {
               
-              var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=1000');
+              var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=60');
               var data = response.array;
               setIsList(data);
 
@@ -55,7 +55,7 @@ import FavoritePokemon from './FavoritePokemon';
         <div className="pokeBox" >
         {(filteredPokemon.length > 0 ? filteredPokemon : isList).map(
             (pokemon) => (
-          <div id='poke1' key={pokemon.id}>
+          <div className='poke1' key={pokemon.id}>
             <div className='poke-Card'>
             <img 
             src={defaultImage}
@@ -100,7 +100,8 @@ import FavoritePokemon from './FavoritePokemon';
               <p>
               Speed: {pokemon.speed}
               </p> */}
-              <button className='favorite-button'><FavoritePokemon/></button>
+              <div><FavoritePokemon name={pokemon.name}/></div>
+              
             </div>
           </div>
         )).slice(firstPosition, laststPosition)}

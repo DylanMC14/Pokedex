@@ -1,7 +1,7 @@
 import React from "react";
 
 
-  const API_URL = "https://64ee6291219b3e2873c32cbf.mockapi.io/favorites";
+  const API_URL = "https://64ee6291219b3e2873c32cbf.mockapi.io";
 
   //GET : Obtener resultados
   async function fetchFavorites() {
@@ -10,9 +10,25 @@ import React from "react";
       return response.json();
     } catch (error) {
       console.error("Error fetching favorites:", error);
-      return [];
+      return null;
     }
   }
+
+
+  async function getPokemonIdByName(name) {
+    try {
+      const response = await fetch(`${API_URL}/favorite-pokemon?name=${name}`);
+      const data = await response.json();
+      console.log(data);
+      if (data && data.length > 0) {
+          return data[0].id;
+          }
+      return null;
+    } catch (error) {
+      throw error;
+    }
+  }
+
 
   //POST : Insertar favoritos
   async function addFavorite(favorite) {
@@ -24,6 +40,7 @@ import React from "react";
         },
         body: JSON.stringify(favorite),
       });
+  
 
       return response.json();
     } catch (error) {
@@ -62,4 +79,4 @@ import React from "react";
     }
   }
 
-  export { fetchFavorites, addFavorite, updateFavorite, deleteFavorite};
+  export { fetchFavorites, addFavorite, updateFavorite, deleteFavorite, getPokemonIdByName};

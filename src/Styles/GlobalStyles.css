@@ -6,7 +6,6 @@
 .navBox{
     display: flex;
     justify-content: space-around;
-    /* background-color: darkslategray; */
     background-image: url(https://i.pinimg.com/originals/e3/25/04/e32504fec92b6b54dfd9b971f07e97c2.gif);
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,8 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: brown; */
-    /* background-image: url(https://media4.giphy.com/media/LLhpt7dnUaLOTurBRz/200w.webp?cid=ecf05e47kvphoqp89hpctctgnds9sxxizhmi3rb2bz9aud5f&ep=v1_gifs_search&rid=200w.webp&ct=g); */
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
@@ -34,9 +31,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url(https://media3.giphy.com/media/xoumb07zRcBS8/100.webp?cid=ecf05e47zf71xabay6rgb178zji6snv7bu616kcp5mao1mt7&ep=v1_gifs_related&rid=100.webp&ct=g);
-    background-repeat: no-repeat;
-    background-size: cover; */
     border-radius: 5px;
     color: aliceblue;
     width: 100px;
@@ -67,9 +61,6 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url(https://media1.giphy.com/media/ePVaotrqY3uwtXvYF7/200w.webp?cid=ecf05e47n7ulrbir6uci3e7aqfpu9peaaycdulnfeotcehot&ep=v1_gifs_search&rid=200w.webp&ct=g);
-    background-repeat: no-repeat;
-    background-size: cover; */
     border-radius: 5px;
     color: aliceblue;
     width: 100px;
@@ -94,10 +85,24 @@ a:active {
     background-size: 110%;
 }
 
-#poke1{
+.poke1{
     display: flex;
     flex-direction: column;
+    /* background-image: url("../Assets/Img/estrella.png"); */
     background-image:  url(https://i.pinimg.com/originals/02/be/ef/02beef54af1eb68390b7e2ffc5c1e667.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    position: relative;
+    transition: all .3s ease;
+    width: 200px;
+}
+
+.poke2{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../Assets/Img/estrella.png");
+    /* background-image:  url(https://i.pinimg.com/originals/02/be/ef/02beef54af1eb68390b7e2ffc5c1e667.gif); */
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 25%;

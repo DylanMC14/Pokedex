@@ -1,85 +1,88 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import "../Styles/Pokedex.css";
-import {getPokemonList} from "./PokePrevNext";
-import defaultImage from '../Assets/Img/gif3.gif';
-import PokeButtonNext from './PokeButtonNext';
-import PokeSearch from './PokeSearch';
-import FavoritePokemon from './FavoritePokemon';
+import { getPokemonList, getPokemonMockApi } from "./PokePrevNext";
+import defaultImage from "../Assets/Img/gif3.gif";
+import PokeButtonNext from "./PokeButtonNext";
+import PokeSearch from "./PokeSearch";
+import FavoritePokemon from "./FavoritePokemon";
 
+function Pokedex() {
+  //update cards
+  const [updateCards,setUpdateCards]=useState(false)
+  //favoritos
+  const [favorites,setFavorites]=useState([])
+  // randomPokemons almacenar los Pokemon
+  const [isList, setIsList] = useState([]);
+  const [filteredPokemon, setFilteredPokemon] = useState([]);
+  const totalPokemon = isList.length;
+  // Paginacion
+  const [page, setPage] = useState(24);
+  const [currentPage, setCurrentPage] = useState(1);
+  const laststPosition = currentPage * page;
+  const firstPosition = laststPosition - page;
+  useEffect(() => {
+    const fetchPokemon = async () => {
+      try {
+        var response = await getPokemonList(
+          "https://pokeapi.co/api/v2/pokemon?limit=1000"
+        );
+        var data = response.array;
+        setIsList(data);
+        //pokemones favoritos
+        const dataFavorites=await getPokemonMockApi();
+        setFavorites(dataFavorites)
+      } catch (error) {
+        console.error("Error capturando Pokemon data", error);
+      }
+    };
+    fetchPokemon();
+  }, [updateCards]);
+  const handleImageLoad = (event) => {
+    event.target.src = event.target.dataset.src;
+  };
 
-  function Pokedex(){
-
-    
-    // randomPokemons almacenar los Pokemon
-    const [isList, setIsList] = useState ([]);
-    const [filteredPokemon, setFilteredPokemon] = useState ([]);
-    const totalPokemon= isList.length;
-    // Paginacion
-    const [page, setPage] = useState(24);
-    const [currentPage, setCurrentPage] = useState(1);
-    const laststPosition = currentPage * page;
-    const firstPosition = laststPosition - page;
-    useEffect ( () =>{
-        const fetchPokemon = async () => {
-            try {
-              
-              var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=60');
-              var data = response.array;
-              setIsList(data);
-
-            } catch (error) {
-              console.error("Error capturando Pokemon data", error);
-            }
-            
-          };
-          fetchPokemon();
-        }, []);
-        const handleImageLoad = (event) => {
-          event.target.src = event.target.dataset.src;
-        };
-
-        const handleFilteredPokemon = (filteredData) => {
-          console.log(filteredData);
-          setFilteredPokemon(filteredData);
-          
-          }
-
-    return ( 
-        <div className='boxPokedex'>
-          <div className='pokedex-title'>
-            <h1>Pokedex</h1>
-          </div>
-          <div className='pokedex-Search'>
-          <PokeSearch handleFilteredPokemon={handleFilteredPokemon}/>
-          </div>
-        <div className="pokeBox" >
-        {(filteredPokemon.length > 0 ? filteredPokemon : isList).map(
-            (pokemon) => (
-          <div className='poke1' key={pokemon.id}>
-            <div className='poke-Card'>
-            <img 
-            src={defaultImage}
-            alt={pokemon.name}
-            data-src={pokemon.image} // Almacenar la URL real en un atributo personalizado
-            onLoad={handleImageLoad} // Manejador de carga de imagen
-            loading="lazy" // Agregar atributo "loading" con valor "lazy"
-            style={{maxHeight:'100px', maxWidth: "100px", borderRadius:"5px",}}/>
-            </div>
-            <div className='poke-Card-info'>
-              <p>
-                {pokemon.name} <br/>
-                {/* #{pokemon.id} */}
-              </p>
-              <p>
-                Height: {pokemon.height}
-              </p>
-              <p>
-                Weight: {pokemon.weight}
-              </p>
-              <p>
-                Types: {pokemon.types}
-              </p>
-              {/* <p>
+  const handleFilteredPokemon = (filteredData) => {
+    console.log(filteredData);
+    setFilteredPokemon(filteredData);
+  };
+  function update(){
+    setUpdateCards(!updateCards)
+  }
+  return (
+    <div className="boxPokedex">
+      <div className="pokedex-title">
+        <h1>Pokedex</h1>
+      </div>
+      <div className="pokedex-Search">
+        <PokeSearch handleFilteredPokemon={handleFilteredPokemon} />
+      </div>
+      <div className="pokeBox">
+        {(filteredPokemon.length > 0 ? filteredPokemon : isList)
+          .map((pokemon) => (
+            <div className="poke1" key={pokemon.id}>
+              <div className="poke-Card">
+                <img
+                  src={defaultImage}
+                  alt={pokemon.name}
+                  data-src={pokemon.image} // Almacenar la URL real en un atributo personalizado
+                  onLoad={handleImageLoad} // Manejador de carga de imagen
+                  loading="lazy" // Agregar atributo "loading" con valor "lazy"
+                  style={{
+                    maxHeight: "100px",
+                    maxWidth: "100px",
+                    borderRadius: "5px",
+                  }}
+                />
+              </div>
+              <div className="poke-Card-info">
+                <p>
+                  # {pokemon.id}<br/>
+                  {pokemon.name} 
+                </p>
+                <p>Height: {pokemon.height}</p>
+                <p>Weight: {pokemon.weight}</p>
+                <p>Types: {pokemon.types}</p>
+                {/* <p>
                 Stats
               </p>
               <p>
@@ -100,22 +103,24 @@ import FavoritePokemon from './FavoritePokemon';
               <p>
               Speed: {pokemon.speed}
               </p> */}
-              <div><FavoritePokemon name={pokemon.name}/></div>
-              
+                <div>
+                  <FavoritePokemon name={pokemon.name} favorites={favorites} update={update} />
+                </div>
+              </div>
             </div>
-          </div>
-        )).slice(firstPosition, laststPosition)}
+          ))
+          .slice(firstPosition, laststPosition)}
       </div>
-      <div className='button-Box'>
-        <PokeButtonNext 
-        page={page} 
-        currentPage={currentPage} 
-        setCurrentPage={setCurrentPage}
-        totalPokemon={totalPokemon}
+      <div className="button-Box">
+        <PokeButtonNext
+          page={page}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalPokemon={totalPokemon}
         />
       </div>
-      </div>
-     );
- }
- 
- export default Pokedex;
+    </div>
+  );
+}
+
+export default Pokedex;

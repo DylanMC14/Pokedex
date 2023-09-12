@@ -1,55 +1,63 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/Pokedex.css";
-import {
-  addFavorite,
-  deleteFavorite,
-  getPokemonIdByName
-} from "./AddFavorite";
+import { addFavorite, deleteFavorite, getPokemonIdByName } from "./AddFavorite";
 
-function FavoritePokemon({ name }) {
-
-    async function fetchFavorites() {
-        try {
-          const response = await fetch(`https://64ee6291219b3e2873c32cbf.mockapi.io"/favorite-pokemon?name=${name}`);
-          return response.json();
-        } catch (error) {
-          console.error("Error fetching favorites:", error);
-          return null;
-        }
-      }
-
-    
-
-
-  const [isDarkMode,setIsDarkMode] = useState (false);
+function FavoritePokemon({ name, favorites, update }) {
+  console.log("1");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
+  const targetName = name;
+  // // Usa some() para verificar si algún usuario tiene el nombre deseado
+  const hasTargetName = favorites.some(
+    (pokemon) => pokemon.name === targetName
+  );
 
   const handleAddFavorite = async () => {
-
     const currentMode = isDarkMode; // almacenar el modo actual
-        setIsDarkMode(!currentMode);
-        // vendria siendo igual que setIsDarkMode (!isDarkMode);
+    setIsDarkMode(!currentMode);
+    // vendria siendo igual que setIsDarkMode (!isDarkMode);
 
     const addedFavorite = await addFavorite({ name: name });
     if (addedFavorite) {
       console.log("Añadido");
+      update();
     }
   };
 
   // Borrar un favorito : Recibir un id a borrar
   const handleDeleteFavorite = async () => {
+    const nowMode = isLightMode; // almacenar el modo actual
+    setIsLightMode(!nowMode);
+    // vendria siendo igual que setIsDarkMode (!isDarkMode);
     // llama al api aqui para que lo borre
-    const id = await getPokemonIdByName(name)
-    console.log('deleted,'+ id);
+    const id = await getPokemonIdByName(name);
+    console.log("deleted," + id);
     await deleteFavorite(id);
+    update();
   };
 
   return (
-    <div>
-      <button className={`pokeBox ${isDarkMode ? "poke1":"poke2"}`} onClick={handleAddFavorite}>
-        Favorite
-      </button>
-      <button onClick={() => handleDeleteFavorite(name)}>Eliminar</button>
-    </div>
+    <>
+      <div className="btn-Fav-Del">
+        {hasTargetName ? (
+          <>
+            <p id="fav">⭐⭐</p>
+            <button
+              className="btn-F-E"
+              onClick={() => handleDeleteFavorite(name)}
+            >
+              ❌
+            </button>
+          </>
+        ) : (
+          <>
+            <button className="btn-F-E-2" onClick={handleAddFavorite}>
+              Fav?
+            </button>
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

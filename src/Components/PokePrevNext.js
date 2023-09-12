@@ -61,3 +61,10 @@ export async function getPokemonList (url) {
       throw error;  
     }
  }
+ export async function getPokemonMockApi() {
+    const res = await fetch(
+      "https://64ee6291219b3e2873c32cbf.mockapi.io/favorite-pokemon"
+    );
+    const data = await res.json();
+    return data;
+  }

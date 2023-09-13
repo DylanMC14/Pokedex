@@ -1,18 +1,23 @@
 .boxPokedex{
-    /* background-color: red; */
+    background-image: url(https://media1.giphy.com/media/EVf8tbnlr77Es/giphy.gif?cid=ecf05e47hfl2ha7id1icovb504ygb38j70wfjypyn7g44eku&ep=v1_gifs_search&rid=giphy.gif&ct=g);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     padding-bottom: 5%;
 }
 
+
 .pokedex-title{
     display: flex;
     justify-content: center;
+    color: aliceblue;
 }
 
 .pokedex-Search{
     display: flex;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .button-Search{
@@ -142,19 +147,44 @@
     transform: translate(0px,5px);
     -webkit-transform: translate(0px,5px);
     -moz-transform:translate(0px,5px);
-}
+}        
               
 #fav {
-    animation-name: rotate;
+    animation-name: pulse;
     animation-duration: 1s;
     animation-iteration-count: infinite;
   }
   
-  @keyframes rotate {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+  @keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
   }
               
  .btn-Fav-Del{
     display: flex;
- }             
+ }
+
+ .poke-Btn-Fav-Del{
+    display: flex;
+ }
+
+ #par-fav{
+    display: flex;
+    font-size: 30px;
+ }
+
+ #btn-del{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    font-size: 10px;
+ }
+
+ .disabled:disabled{
+    color: aliceblue;
+ }
+
+ #text{
+    color: aliceblue;
+ }

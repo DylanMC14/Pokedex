@@ -5,6 +5,7 @@ import defaultImage from "../Assets/Img/gif3.gif";
 import PokeButtonNext from "./PokeButtonNext";
 import PokeSearch from "./PokeSearch";
 import FavoritePokemon from "./FavoritePokemon";
+import VanillaTilt from "vanilla-tilt";
 
 function Pokedex() {
   //update cards
@@ -24,7 +25,7 @@ function Pokedex() {
     const fetchPokemon = async () => {
       try {
         var response = await getPokemonList(
-          "https://pokeapi.co/api/v2/pokemon?limit=1000"
+          "https://pokeapi.co/api/v2/pokemon?limit=100"
         );
         var data = response.array;
         setIsList(data);
@@ -37,6 +38,20 @@ function Pokedex() {
     };
     fetchPokemon();
   }, [updateCards]);
+
+  useEffect(()=>{
+    VanillaTilt.init(document.querySelectorAll(".poke1"),{
+      scale: 1.1,
+      perspective: 2000,
+      easing: "cubic-bezier(.03,.98,.52,.99)",
+      transition: true,
+      maxTilt: 20,
+      reset: true,
+      speed: 300,
+      // glare: true,
+      maxGlare: 0.5
+    })
+  })
   const handleImageLoad = (event) => {
     event.target.src = event.target.dataset.src;
   };
@@ -48,6 +63,7 @@ function Pokedex() {
   function update(){
     setUpdateCards(!updateCards)
   }
+
   return (
     <div className="boxPokedex">
       <div className="pokedex-title">
@@ -56,10 +72,17 @@ function Pokedex() {
       <div className="pokedex-Search">
         <PokeSearch handleFilteredPokemon={handleFilteredPokemon} />
       </div>
+      <div id="text">
+        <h5>
+        The ⭐ means that the pokemon is added to favorites <br/>
+        The ❌ would be to remove the pokemon from the favorites list
+        </h5>
+      </div>
       <div className="pokeBox">
         {(filteredPokemon.length > 0 ? filteredPokemon : isList)
           .map((pokemon) => (
-            <div className="poke1" key={pokemon.id}>
+            <div >
+              <div className="poke1 rg" key={pokemon.id}>
               <div className="poke-Card">
                 <img
                   src={defaultImage}
@@ -103,11 +126,13 @@ function Pokedex() {
               <p>
               Speed: {pokemon.speed}
               </p> */}
-                <div>
+                <div className="poke-Btn-Fav-Del">
                   <FavoritePokemon name={pokemon.name} favorites={favorites} update={update} />
                 </div>
               </div>
             </div>
+            </div>
+            
           ))
           .slice(firstPosition, laststPosition)}
       </div>

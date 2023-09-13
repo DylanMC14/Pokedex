@@ -1,158 +1,267 @@
 @font-face {
-    font-family: "pokeletra";
-    src: url("../.././public/Pokemon\ Solid.ttf");
+  font-family: "pokeletra";
+  src: url("../.././public/Pokemon\ Solid.ttf");
 }
 
-.navBox{
-    display: flex;
-    justify-content: space-around;
-    background-image: url(https://i.pinimg.com/originals/e3/25/04/e32504fec92b6b54dfd9b971f07e97c2.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: "pokeletra";
-    letter-spacing: 2px;
-    padding-top: 10px;
-    padding-bottom: 15px;
+.navBox {
+  display: flex;
+  justify-content: space-around;
+  background-image: url(https://i.pinimg.com/originals/e3/25/04/e32504fec92b6b54dfd9b971f07e97c2.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "pokeletra";
+  letter-spacing: 2px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
-.home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 5px;
-    color: aliceblue;
-    width: 100px;
-    height: 50px;
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  color: aliceblue;
+  width: 100px;
+  height: 50px;
 }
 
-.pokedex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    color: aliceblue;
-    width: 100px;
-    height: 50px;
+.pokedex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: aliceblue;
+  width: 100px;
+  height: 50px;
 }
 
 a:link {
-    color: red;
-    text-decoration: none;
+  color: red;
+  text-decoration: none;
 }
 
 a:visited {
-    color: aliceblue;
-    text-decoration: none;
+  color: aliceblue;
+  text-decoration: none;
 }
 
-a:hover{
-    color: violet;
-    text-decoration: underline;
+a:hover {
+  color: violet;
+  text-decoration: underline;
 }
 
 a:active {
-    color: blue;
-    text-decoration: underline;
+  color: blue;
+  text-decoration: underline;
 }
 
 .about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    color: aliceblue;
-    width: 100px;
-    height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: aliceblue;
+  width: 100px;
+  height: 50px;
 }
 
-.pokeBox{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    top: 70px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-   
+.pokeBox {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 70px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-#infoBox{
-    display: flex;
-    flex-direction: column;
-    background-image:  url(https://media2.giphy.com/media/l0HlvGZXSgzNtY7OU/200w.webp?cid=ecf05e47tyqz8x71w3netjf6cxliflh6ebik4cu9ne0e5e56&ep=v1_gifs_search&rid=200w.webp&ct=g);
-    background-repeat: no-repeat;
-    background-size: 110%;
+#infoBox {
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://media2.giphy.com/media/l0HlvGZXSgzNtY7OU/200w.webp?cid=ecf05e47tyqz8x71w3netjf6cxliflh6ebik4cu9ne0e5e56&ep=v1_gifs_search&rid=200w.webp&ct=g);
+  background-repeat: no-repeat;
+  background-size: 110%;
 }
 
-.poke1{
-    display: flex;
-    flex-direction: column;
-    background-image:  url(https://i.pinimg.com/originals/02/be/ef/02beef54af1eb68390b7e2ffc5c1e667.gif);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 25%;
-    position: relative;
-    transition: all .3s ease;
-    width: 200px;
+.poke1 {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%), url(https://i.pinimg.com/originals/02/be/ef/02beef54af1eb68390b7e2ffc5c1e667.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 25%;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 200px;
 }
 
-.poke2{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../Assets/Img/estrella.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 25%;
-    position: relative;
-    transition: all .3s ease;
-    width: 200px;
+.rg{
+    /* background-color: #d0de21; */
 }
 
-.poke3{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../Assets/Img/x-png.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 25%;
-    position: relative;
-    transition: all .3s ease;
-    width: 200px;
-}
-
-.poke1:hover{
-    transform: 
-    perspective(250px)
-    rotateX(10deg)
-    translateY(-5%)
-    translateZ(0);
-}
-
-.poke1::before{
+.rg::after{
     content: "";
-    position: absolute;
-    background-image: 
-    linear-gradient(
-        to bottom,
-        transparent 10%,
-        rgba(252, 250, 250, 0.5) 50%,
-        rgb(249, 247, 247) 95%
-    );
-    opacity: 0;
-    transition: all .3s ease;
+    background: linear-gradient(45deg,
+    #ff0000 0%,
+    #ff9a00 10%,
+    #d0de21 20%,
+    #4fdc4a 30%,
+    #3fdad8 40%,
+    #2fc9e2 50%,
+    #1c7fee 60%,
+    #5f15f2 70%,
+    #ba0cf8 80%,
+    #fb07d9 90%,
+    #ff0000 100% )
+    repeat 0% 0% / 300% 100%;
+    /* position: absolute; */
+    inset: -3px;
+    border-radius: 16px;
+    filter: blur(8px);
+    z-index: -1px;
+    animation: rgb 6s linear infinite;
 }
 
-.button-Box{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15%;
+@keyframes rgb {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
-.button-Next{
-    border-radius: 5px;
+/* .poke1:hover {
+  transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+} */
+
+.poke1::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 10%,
+    rgba(252, 250, 250, 0.5) 50%,
+    rgb(249, 247, 247) 95%
+  );
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
-.button-Previous{
-    border-radius: 5px;
+.button-Box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15%;
+}
+
+.pagination-next {
+  background-color: aliceblue;
+}
+
+.pagination-previous {
+  background-color: aliceblue;
+}
+
+.pagination-link {
+  background-color: aliceblue;
+}
+
+.pagination-link:hover {
+  animation-name: shake;
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.pagination-previous:hover {
+  animation-name: swing;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.pagination-next:hover {
+  animation-name: swing;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
 }

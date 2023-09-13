@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {getPokemonList} from "./PokePrevNext";
-
+import "../Styles/Pokedex.css";
+import "../Styles/GlobalStyles.css";
  function PokeButtonNext({page,totalPokemon, currentPage, setCurrentPage}) {
 
     const pageNumbers = []
@@ -29,8 +30,8 @@ import {getPokemonList} from "./PokePrevNext";
       role="navigation"
       aria-label="pagination"
     >
-      <a className={`pagination-previous ${currentPage === 1 ? "is-disabled" : ""}`} onClick={previousPage}>Previous</a>
-      <a className={`pagination-next ${currentPage >= pageNumbers.length ? "is-disabled" : ""}`} onClick={nextPage}>Next</a>
+      <a className={`pagination-previous ${currentPage === 1 ? "disabled" : ""}`} onClick={previousPage}>Previous</a>
+      <a className={`pagination-next ${currentPage >= pageNumbers.length ? "disabled" : ""}`} onClick={nextPage}>Next</a>
       <ul className="pagination-list">
         {
             pageNumbers.map(pokemon => (

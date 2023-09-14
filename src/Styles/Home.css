@@ -1,38 +1,63 @@
-.home-Header{
-    background-image: url(https://i.imgur.com/oJkBNgX.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 150px;
+.home-Header {
+  background-image: url(https://i.imgur.com/oJkBNgX.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 150px;
 }
 
-.box-games{
-    margin-top: 0;
+.box-games {
+  margin-top: 0;
 }
 
-#title-Games{
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 20px;
-    font-family: "pokeletra";
-    letter-spacing: 4px;
-    background-image: url(https://static.vecteezy.com/system/resources/previews/006/036/195/non_2x/comic-style-background-design-element-for-poster-card-banner-or-comic-book-free-vector.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: aliceblue;
+#title-Games {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  font-family: "letracomic";
+  letter-spacing: 4px;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/006/036/195/non_2x/comic-style-background-design-element-for-poster-card-banner-or-comic-book-free-vector.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
 }
 
-
-.images-Games{
-    /* background-color: brown; */
-    background-image: url(https://img.freepik.com/premium-vector/pop-art-comic-background-with-cloud-dot-halftone-yellow_534957-592.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 1050px;
+.images-Games {
+  background-image: url(https://img.freepik.com/premium-vector/pop-art-comic-background-with-cloud-dot-halftone-yellow_534957-592.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 1050px;
 }
 
 @font-face {
-    font-family: "pokeletra";
-    src: url("../.././public/Pokemon\ Solid.ttf");
+  font-family: "letracomic";
+  src: url("../.././public/Webcomic.otf");
+}
+
+#pokemon {
+  display: flex;
+  background-image: url("../Assets/Img/pokemon.webp");
+  height: 670px;
+  background-repeat: no-repeat;
+}
+
+#ash {
+  display: flex;
+  background-image: url("../Assets/Img/ash-ketchum-pikachu.webp");
+  height: 739px;
+  background-repeat: no-repeat;
+}
+
+#titles-Home {
+  text-decoration: underline;
+  font-family: "letracomic";
+}
+
+#paragraphs-Home {
+  font-family: "letracomic";
+}
+
+#font {
+  background-color: rgba(240, 248, 255, 0.553);
 }

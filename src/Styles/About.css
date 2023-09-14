@@ -1,42 +1,42 @@
-.boxAbout{
-    background-color: rgba(240, 248, 255, 0.635);
-    padding-bottom: 10px;
+.boxAbout {
+  background-color: rgba(240, 248, 255, 0.635);
+  padding-bottom: 10px;
 }
 
-.text{
-    background-image: url("../Assets/Img/fondo-about-comic.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-@font-face {
-    font-family: "pokeletra";
-    src: url("../.././public/Pokemon\ Solid.ttf");
+.text {
+  background-image: url("../Assets/Img/fondo-about-comic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @font-face {
-    font-family: "letracomic";
-    src: url("../.././public/Webcomic.otf");
+  font-family: "pokeletra";
+  src: url("../.././public/Pokemon\ Solid.ttf");
 }
 
-.title{
-    font-family: "letracomic";
-    text-decoration: underline;
-    color: black;
+@font-face {
+  font-family: "letracomic";
+  src: url("../.././public/Webcomic.otf");
 }
 
-.poke-Info{
-    font-family: "letracomic";
-    color: black;
+.title {
+  font-family: "letracomic";
+  text-decoration: underline;
+  color: black;
 }
 
-.seconds-Titles{
-    font-family: "letracomic";
-    text-decoration: underline;
-    color: black;
+.poke-Info {
+  font-family: "letracomic";
+  color: black;
 }
 
-.paragraphs{
-    font-family: "letracomic";
-    color: black;
+.seconds-Titles {
+  font-family: "letracomic";
+  text-decoration: underline;
+  color: black;
+}
+
+.paragraphs {
+  font-family: "letracomic";
+  color: black;
 }

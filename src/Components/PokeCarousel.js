@@ -1,42 +1,42 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
-} from 'reactstrap';
+  CarouselCaption,
+} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const items = [
   {
-    src: require('../Assets/Img/pokemon-x.jpg'),
-    altText: 'Image1',
+    src: require("../Assets/Img/pokemon-x.jpg"),
+    altText: "Image1",
   },
   {
-    src: require('../Assets/Img/pokemon-y.jpg'),
-    altText: 'Image2',
+    src: require("../Assets/Img/pokemon-y.jpg"),
+    altText: "Image2",
   },
   {
-    src: require('../Assets/Img/pokemon-esmeralda-delta-.jpg'),
-    altText: 'Image3',
+    src: require("../Assets/Img/pokemon-esmeralda-delta-.jpg"),
+    altText: "Image3",
   },
   {
-    src: require('../Assets/Img/pokemon-zafiro-alfa.jpg'),
-    altText: 'Image4',
+    src: require("../Assets/Img/pokemon-zafiro-alfa.jpg"),
+    altText: "Image4",
   },
   {
-    src: require('../Assets/Img/pokemon-luna.jpg'),
-    altText: 'Image7',
+    src: require("../Assets/Img/pokemon-luna.jpg"),
+    altText: "Image7",
   },
   {
-    src: require('../Assets/Img/pokemon-omega-ruby.webp'),
-    altText: 'Image8',
+    src: require("../Assets/Img/pokemon-omega-ruby.webp"),
+    altText: "Image8",
   },
   {
-    src: require('../Assets/Img/pokemon-sol.webp'),
-    altText: 'Image9',
-  }
+    src: require("../Assets/Img/pokemon-sol.webp"),
+    altText: "Image9",
+  },
 ];
 
 class PokeCarousel extends Component {
@@ -60,13 +60,19 @@ class PokeCarousel extends Component {
 
   next() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    const nextIndex =
+      this.state.activeIndex === items.length - 1
+        ? 0
+        : this.state.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
   }
 
   previous() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    const nextIndex =
+      this.state.activeIndex === 0
+        ? items.length - 1
+        : this.state.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
   }
 
@@ -86,7 +92,10 @@ class PokeCarousel extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} width="100%" height="750px" />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption
+            captionText={item.caption}
+            captionHeader={item.caption}
+          />
         </CarouselItem>
       );
     });
@@ -97,14 +106,25 @@ class PokeCarousel extends Component {
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators
+          items={items}
+          activeIndex={activeIndex}
+          onClickHandler={this.goToIndex}
+        />
         {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={this.previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={this.next}
+        />
       </Carousel>
     );
   }
 }
-
 
 export default PokeCarousel;

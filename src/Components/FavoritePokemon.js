@@ -41,17 +41,17 @@ function FavoritePokemon({ name, favorites, update }) {
       <div className="btn-Fav-Del">
         {hasTargetName ? (
           <>
-          <div id="par-fav">
-            <p id="fav">⭐</p>
-          </div>
-          <div id="btn-del">
-            <button
-              className="btn-F-E"
-              onClick={() => handleDeleteFavorite(name)}
-            >
-              ❌
-            </button>
-          </div>
+            <div id="par-fav">
+              <p id="fav">⭐</p>
+            </div>
+            <div id="btn-del">
+              <button
+                className="btn-F-E"
+                onClick={() => handleDeleteFavorite(name)}
+              >
+                ❌
+              </button>
+            </div>
           </>
         ) : (
           <>

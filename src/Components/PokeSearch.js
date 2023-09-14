@@ -3,15 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { getPokemonList } from "./PokePrevNext";
 import "../Styles/Pokedex.css";
 
-function PokeSearch({handleFilteredPokemon}) {
+function PokeSearch({ handleFilteredPokemon }) {
   const [pokemon, setPokemon] = useState([]);
   const [tablePokemon, setTablaPokemon] = useState([]);
   const [search, setSearch] = useState("");
 
   const requestsGet = async () => {
     try {
-    var response = await getPokemonList('https://pokeapi.co/api/v2/pokemon?limit=1000');
-    var data = response.array;
+      var response = await getPokemonList(
+        "https://pokeapi.co/api/v2/pokemon?limit=1000"
+      );
+      var data = response.array;
       setPokemon(data);
       setTablaPokemon(data);
     } catch (error) {
@@ -33,7 +35,7 @@ function PokeSearch({handleFilteredPokemon}) {
       elemento.name.toLowerCase().includes(finalSearch.toLowerCase().trim())
     );
     setPokemon(result);
-    console.log("aquiii",result);
+    console.log("aquiii", result);
     handleFilteredPokemon(result);
   };
 

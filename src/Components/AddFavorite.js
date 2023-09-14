@@ -1,82 +1,84 @@
 import React from "react";
 
+const API_URL = "https://64ee6291219b3e2873c32cbf.mockapi.io";
 
-  const API_URL = "https://64ee6291219b3e2873c32cbf.mockapi.io";
-
-  //GET : Obtener resultados
-  async function fetchFavorites() {
-    try {
-      const response = await fetch(`${API_URL}/favorite-pokemon`);
-      return response.json();
-    } catch (error) {
-      console.error("Error fetching favorites:", error);
-      return null;
-    }
+//GET : Obtener resultados
+async function fetchFavorites() {
+  try {
+    const response = await fetch(`${API_URL}/favorite-pokemon`);
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching favorites:", error);
+    return null;
   }
+}
 
-
-  async function getPokemonIdByName(name) {
-    try {
-      const response = await fetch(`${API_URL}/favorite-pokemon?name=${name}`);
-      const data = await response.json();
-      console.log(data);
-      if (data && data.length > 0) {
-          return data[0].id;
-          }
-      return null;
-    } catch (error) {
-      throw error;
+async function getPokemonIdByName(name) {
+  try {
+    const response = await fetch(`${API_URL}/favorite-pokemon?name=${name}`);
+    const data = await response.json();
+    console.log(data);
+    if (data && data.length > 0) {
+      return data[0].id;
     }
+    return null;
+  } catch (error) {
+    throw error;
   }
+}
 
+//POST : Insertar favoritos
+async function addFavorite(favorite) {
+  try {
+    const response = await fetch(`${API_URL}/favorite-pokemon`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(favorite),
+    });
 
-  //POST : Insertar favoritos
-  async function addFavorite(favorite) {
-    try {
-      const response = await fetch(`${API_URL}/favorite-pokemon`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(favorite),
-      });
-  
-
-      return response.json();
-    } catch (error) {
-      console.error("Error adding favorite:", error);
-      return null;
-    }
+    return response.json();
+  } catch (error) {
+    console.error("Error adding favorite:", error);
+    return null;
   }
+}
 
-  // PUT : Actualiza favoritos
-  async function updateFavorite(id, changes) {
-    try {
-      const response = await fetch(`${API_URL}/favorite-pokemon/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(changes),
-      });
+// PUT : Actualiza favoritos
+async function updateFavorite(id, changes) {
+  try {
+    const response = await fetch(`${API_URL}/favorite-pokemon/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(changes),
+    });
 
-      return response.json();
-    } catch (error) {
-      console.error("Error updating favorite:", error);
-      return null;
-    }
+    return response.json();
+  } catch (error) {
+    console.error("Error updating favorite:", error);
+    return null;
   }
+}
 
-  //DELETE : Borrar favoritos
-  async function deleteFavorite(id) {
-    try {
-      await fetch(`${API_URL}/favorite-pokemon/${id}`, {
-        method: "DELETE",
-      });
-      console.log(`Favorite with ID ${id} deleted.`);
-    } catch (error) {
-      console.error("Error deleting favorite:", error);
-    }
+//DELETE : Borrar favoritos
+async function deleteFavorite(id) {
+  try {
+    await fetch(`${API_URL}/favorite-pokemon/${id}`, {
+      method: "DELETE",
+    });
+    console.log(`Favorite with ID ${id} deleted.`);
+  } catch (error) {
+    console.error("Error deleting favorite:", error);
   }
+}
 
-  export { fetchFavorites, addFavorite, updateFavorite, deleteFavorite, getPokemonIdByName};
+export {
+  fetchFavorites,
+  addFavorite,
+  updateFavorite,
+  deleteFavorite,
+  getPokemonIdByName,
+};

@@ -8,7 +8,7 @@ function About() {
             <h1 className='title'> What is our page about ?</h1>
             <h3 className='poke-Info'> Our page is oriented on the pokemon pokedex and the information it provides.</h3>
 
-            <h2 className='seconds-Titles'> What is the pokedex ?</h2>
+            <h4 className='seconds-Titles'> What is the pokedex ?</h4>
             <p className='paragraphs'>
               In the world of Pokémon is a high-tech portable virtual encyclopedia that Pokémon trainers
               they carry with them to record the tokens of all the various
@@ -19,7 +19,7 @@ function About() {
               Said "expanded" Pokédex is known as the National Pokédex.
             </p>
 
-            <h2 className='seconds-Titles'> How does it work ?</h2>
+            <h4 className='seconds-Titles'> How does it work ?</h4>
             <p className='paragraphs'>
               The Pokédex works simply, as it is organized into entries. When
               gets for the first time, these are empty and don't even show the
@@ -33,7 +33,7 @@ function About() {
               of each, sighted and captured.
             </p>
 
-            <h2 className='seconds-Titles'> Can you search the pokedex ?</h2>
+            <h4 className='seconds-Titles'> Can you search the pokedex ?</h4>
             <p className='paragraphs'>
               The Pokédex is capable, through its search system, of classifying Pokémon
               in different ways, the main one is by the number they have in their Pokédex and
@@ -43,7 +43,7 @@ function About() {
               if they have mega evolution, or if they are not captured.
             </p>
 
-            <h2 className='seconds-Titles'> Location</h2>
+            <h4 className='seconds-Titles'> Location</h4>
             <p className='paragraphs'>
               The Pokédex is capable of showing all the places where a Pokémon in the region lives.
               In some cases, the locations vary and, in others, there are Pokémon that can only be spotted
@@ -51,7 +51,7 @@ function About() {
               This is what happens especially in legendary Pokémon.
             </p>
 
-            <h2 className='seconds-Titles'> Pokédex by generation</h2>
+            <h4 className='seconds-Titles'> Pokédex by generation</h4>
             <p className='paragraphs'>
               With the passage of time, the Pokédex has been presenting modifications, resulting in different
               versions or models that vary from generation to generation and by region.

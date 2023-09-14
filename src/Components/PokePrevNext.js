@@ -45,6 +45,7 @@ export async function getPokemonList (url) {
             id:data.id,
             name:data.name,
             image:data.sprites.other["official-artwork"]["front_default"],
+            image2:data.sprites.other.home["front_default"],
             weight:data.weight,
             height:data.height,
             types:data.types.map(nombres =>nombres.type.name + " "),

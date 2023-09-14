@@ -12,37 +12,30 @@ const items = [
   {
     src: require('../Assets/Img/pokemon-x.jpg'),
     altText: 'Image1',
-    // caption: 'Pokemon-X'
   },
   {
     src: require('../Assets/Img/pokemon-y.jpg'),
     altText: 'Image2',
-    // caption: 'Pokemon-Y'
   },
   {
     src: require('../Assets/Img/pokemon-esmeralda-delta-.jpg'),
     altText: 'Image3',
-    // caption: 'Pokemon-Esmeralda-Delta'
   },
   {
     src: require('../Assets/Img/pokemon-zafiro-alfa.jpg'),
     altText: 'Image4',
-    // caption: 'Pokemon-Zafiro-Alfa'
   },
   {
     src: require('../Assets/Img/pokemon-luna.jpg'),
     altText: 'Image7',
-    // caption: 'Pokemon-Luna'
   },
   {
     src: require('../Assets/Img/pokemon-omega-ruby.webp'),
     altText: 'Image8',
-    // caption: 'Pokemon-Omega-Ruby'
   },
   {
     src: require('../Assets/Img/pokemon-sol.webp'),
     altText: 'Image9',
-    // caption: 'Pokemon-Sol'
   }
 ];
 

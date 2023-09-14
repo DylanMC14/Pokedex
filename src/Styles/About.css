@@ -1,10 +1,10 @@
 .boxAbout{
-    /* margin-top: 25px; */
+    background-color: rgba(240, 248, 255, 0.635);
     padding-bottom: 10px;
 }
 
 .text{
-    background-image: url(../Assets/Img/pokedex-pantalla-corto2.jpg);
+    background-image: url("../Assets/Img/fondo-about-comic.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -14,22 +14,29 @@
     src: url("../.././public/Pokemon\ Solid.ttf");
 }
 
+@font-face {
+    font-family: "letracomic";
+    src: url("../.././public/Webcomic.otf");
+}
+
 .title{
-    font-family: "pokeletra";
-    letter-spacing: 4px;
+    font-family: "letracomic";
+    text-decoration: underline;
+    color: black;
 }
 
 .poke-Info{
-    font-family: "pokeletra";
-    letter-spacing: 3px
+    font-family: "letracomic";
+    color: black;
 }
 
 .seconds-Titles{
-    font-family: "pokeletra";
-    letter-spacing: 4px;
+    font-family: "letracomic";
+    text-decoration: underline;
+    color: black;
 }
 
 .paragraphs{
-    font-family: "pokeletra";
-    letter-spacing: 2px;
+    font-family: "letracomic";
+    color: black;
 }

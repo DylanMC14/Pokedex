@@ -43,13 +43,21 @@ function Pokedex() {
     VanillaTilt.init(document.querySelectorAll(".poke1"),{
       scale: 1.1,
       perspective: 2000,
-      easing: "cubic-bezier(.03,.98,.52,.99)",
+      easing: "cubic-bezier(.05,.100,.55,.104)",
       transition: true,
       maxTilt: 20,
       reset: true,
       speed: 300,
-      // glare: true,
-      maxGlare: 0.5
+    })
+    VanillaTilt.init(document.querySelectorAll(".info"),{
+      reset: true,
+      perspective: 2000,
+      speed: 300,
+    })
+    VanillaTilt.init(document.querySelectorAll(".poke-Card"),{
+      reset: true,
+      perspective: 2000,
+      speed: 300,
     })
   })
   const handleImageLoad = (event) => {
@@ -88,7 +96,7 @@ function Pokedex() {
                 <img
                   src={defaultImage}
                   alt={pokemon.name}
-                  data-src={pokemon.image} // Almacenar la URL real en un atributo personalizado
+                  data-src={pokemon.image2} // Almacenar la URL real en un atributo personalizado
                   onLoad={handleImageLoad} // Manejador de carga de imagen
                   loading="lazy" // Agregar atributo "loading" con valor "lazy"
                   style={{
@@ -99,33 +107,24 @@ function Pokedex() {
                 />
               </div>
               <div className="poke-Card-info">
+                <div className="info">
                 <p>
-                  # {pokemon.id}<br/>
-                  {pokemon.name} 
+                  {pokemon.name} <br/>
+                  # {pokemon.id}
                 </p>
-                <p>Height: {pokemon.height}</p>
-                <p>Weight: {pokemon.weight}</p>
                 <p>Types: {pokemon.types}</p>
-                {/* <p>
-                Stats
-              </p>
               <p>
-                Hp: {pokemon.hp}
+              Stats: <br/> Hp: {pokemon.hp} / Attack: {pokemon.attack} <br/> 
+                Defense: {pokemon.defense} / Speed: {pokemon.speed}
               </p>
-              <p>
-              Attack: {pokemon.attack}
-              </p>
-              <p>
-              Defense: {pokemon.defense}
-              </p>
-              <p>
+                <p>Height: {pokemon.height} <br/> Weight: {pokemon.weight}</p>
+                </div>
+                
+              {/* <p>
               Special attack: {pokemon.specialattack}
-              </p>
-              <p>
+              </p> */}
+              {/* <p>
               Special defense: {pokemon.specialdefense}
-              </p>
-              <p>
-              Speed: {pokemon.speed}
               </p> */}
                 <div className="poke-Btn-Fav-Del">
                   <FavoritePokemon name={pokemon.name} favorites={favorites} update={update} />

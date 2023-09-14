@@ -13,6 +13,7 @@ import "../Styles/GlobalStyles.css";
     }
 
     const previousPage = () => {
+      alert(currentPage)
         setCurrentPage(currentPage - 1)
     }
 
@@ -30,8 +31,8 @@ import "../Styles/GlobalStyles.css";
       role="navigation"
       aria-label="pagination"
     >
-      <a className={`pagination-previous ${currentPage === 1 ? "disabled" : ""}`} onClick={previousPage}>Previous</a>
-      <a className={`pagination-next ${currentPage >= pageNumbers.length ? "disabled" : ""}`} onClick={nextPage}>Next</a>
+      <a className={`pagination-previous ${currentPage === 1 ? "is-hidden" : ""}`} onClick={previousPage}>Previous</a>
+      <a className={`pagination-next ${currentPage >= pageNumbers.length ? "is-hidden" : ""}`} onClick={nextPage}>Next</a>
       <ul className="pagination-list">
         {
             pageNumbers.map(pokemon => (

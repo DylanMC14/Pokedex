@@ -7,11 +7,12 @@
     padding-bottom: 5%;
 }
 
-
 .pokedex-title{
+    font-family: "letracomic";
     display: flex;
     justify-content: center;
     color: aliceblue;
+    text-decoration: underline;
 }
 
 .pokedex-Search{
@@ -29,19 +30,37 @@
     src: url("../.././public/Pokemon\ Solid.ttf");
 }
 
+@font-face {
+    font-family: "letracomic";
+    src: url("../.././public/Webcomic.otf");
+}
+
+@font-face {
+    font-family: "letracomic2";
+    src: url("../.././public/Comicbon\ -\ personal\ use.ttf");
+}
+
 .poke-Card{
     display: flex;
     justify-content: center;
 }
 
 .poke-Card-info{
-    background-image: url(https://i.pinimg.com/originals/a9/43/25/a94325dc433e4d936575c12143106549.jpg);
+    background-image: url("../Assets/Img/fondo-info-v3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 25%;
+    font-family: "letracomic2";
+    letter-spacing: 2px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .favorite-button{
@@ -49,66 +68,6 @@
     border-radius: 5px;
     width: 70px;
     height: 30px;
-}
-
-
-.dropbtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    font-size: 16px;
-    border: inset;
-    border-color: black;
-    font-family: "pokeletra2";
-    letter-spacing: 4px;
-    border-radius: 12px;
-    font-weight: bold;
-    position: relative;
-}
-  
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgba(6, 205, 205, 0.756);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 10px;
-}
-
-.dropbtn:hover{
-    cursor: grab;
-    background-color: rgba(247, 247, 247, 0.282);
-    border: none;
-    text-shadow: 1px 1px gold;
-}
-
-.dropbtn:active{
-    cursor: grabbing;
-}
-
-.dropbtn:hover::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg,gold,white,gray,white,gold,white,gray,white
-    );
-    background-size: 800%;
-    border-radius: 12px;
-    filter: blur(15px);
-    animation: glowing 20s linear infinite;
 }
 
 .btn-F-E{
@@ -131,8 +90,7 @@
 }
  
 .btn-F-E-2{
-    /* background-color: bisque; */
-    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%), url(https://img.freepik.com/foto-gratis/diseno-espacio-papel-texturado-fondo_53876-34033.jpg);
+    background: linear-gradient(#fff0 0%, #fff0 80%, grey 100%), url(https://img.freepik.com/foto-gratis/diseno-espacio-papel-texturado-fondo_53876-34033.jpg);
     border-radius: 5px;
     width: 70px;
     height: 30px;
@@ -190,4 +148,5 @@
 
  #text{
     color: aliceblue;
+    font-family: "letracomic";
  }

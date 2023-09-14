@@ -74,6 +74,7 @@ a:active {
   top: 70px;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 25px;
 }
 
 #infoBox {
@@ -94,10 +95,6 @@ a:active {
   position: relative;
   transition: all 0.3s ease;
   width: 200px;
-}
-
-.rg{
-    /* background-color: #d0de21; */
 }
 
 .rg::after{

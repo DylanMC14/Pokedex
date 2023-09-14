@@ -1,5 +1,5 @@
 .boxPokedex{
-    background-image: url(https://media1.giphy.com/media/EVf8tbnlr77Es/giphy.gif?cid=ecf05e47hfl2ha7id1icovb504ygb38j70wfjypyn7g44eku&ep=v1_gifs_search&rid=giphy.gif&ct=g);
+    background-image: url(https://i.pinimg.com/originals/9b/9c/fd/9b9cfd0495237e97fd32c9911c6d606c.gif);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -35,7 +35,9 @@
 }
 
 .poke-Card-info{
-    background-color: aqua;
+    background-image: url(https://i.pinimg.com/originals/a9/43/25/a94325dc433e4d936575c12143106549.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,7 +131,8 @@
 }
  
 .btn-F-E-2{
-    background-color: rgb(255, 228, 196);
+    /* background-color: bisque; */
+    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%), url(https://img.freepik.com/foto-gratis/diseno-espacio-papel-texturado-fondo_53876-34033.jpg);
     border-radius: 5px;
     width: 70px;
     height: 30px;
@@ -143,7 +146,7 @@
 }
 
 .btn-F-E-2:hover{
-    box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+    box-shadow: 0 8px 8px 0 aliceblue,0 8px 8px 0 cyan;
     transform: translate(0px,5px);
     -webkit-transform: translate(0px,5px);
     -moz-transform:translate(0px,5px);

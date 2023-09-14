@@ -17,7 +17,7 @@ function Pokedex() {
   const [filteredPokemon, setFilteredPokemon] = useState([]);
   const totalPokemon = isList.length;
   // Paginacion
-  const [page, setPage] = useState(24);
+  const [page, setPage] = useState(25);
   const [currentPage, setCurrentPage] = useState(1);
   const laststPosition = currentPage * page;
   const firstPosition = laststPosition - page;
@@ -65,6 +65,7 @@ function Pokedex() {
   }
 
   return (
+
     <div className="boxPokedex">
       <div className="pokedex-title">
         <h1>Pokedex</h1>
